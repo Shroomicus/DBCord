@@ -44,8 +44,6 @@ def updateSheet(data):
     for ind in range(len(data)):
         reasons.append([data[ind][-1]])
         data[ind] = data[ind][:len(data[ind])-1]
-
-    # print(reasons)
         
     sheet = tables.worksheet("Updates")
     sheet.update('A1', data, raw=False)
@@ -161,13 +159,111 @@ class Money(commands.Cog):
             if(data[ind][5] == "FALSE"):
                 unpaid.append(data[ind])
                 unpaid[-1].append(ind)
-    
-        print(unpaid)
 
-        await ctx.send(embed = embedHelper.sucEmbed(
-            "TESTING",
-            "TESTING"
-        ))
+        items = []
+        for item in unpaid:
+            date = [int(x) for x in item[0].split("/")]
+            date = datetime.datetime(date[2], date[1], date[0]).timestamp()
+            items.append([item[-2], int(item[-1]), date, float(item[1][1:])])
+
+        unpaid_view = ItemView()
+        unpaid_view.data = items
+        unpaid_view.sort()
+        await unpaid_view.send(ctx)
+
+class ItemView(nextcord.ui.View):
+    sortType = 0
+    curr_page = 0
+    items_per_page = 4
+    def __init__(self):
+        super().__init__(timeout = None)
+        self.value = None
+
+    async def send(self, ctx):
+        self.message = await ctx.send(view=self)
+        await self.update_message()
+
+    def sort(self):
+        self.sortType = (self.sortType + 1) % 4
+        self.data.sort(key = lambda x: x[self.sortType])
+
+    def create_embed(self, items):
+        formatted = []
+        for item in items:
+            formatted.append([
+                item[0],
+                f"Index: `{item[1]}`\nDate: `{datetime.datetime.fromtimestamp(item[2]).strftime('%m/%d/%Y')}\n`Price: `${'{0:.2f}'.format(item[3])}`\n"
+            ])
+        if(self.sortType == 0):
+            sortMess = "Name"
+        if(self.sortType == 1):
+            sortMess = "Index"
+        if(self.sortType == 2):
+            sortMess = "Date"
+        if(self.sortType == 3):
+            sortMess = "Price"
+        return embedHelper.listEmbed("Unpaid Items", "Sorting by: " + sortMess, formatted)
+    
+    def update_buttons(self):
+        if(self.curr_page == 0):
+            self.first_button.disabled = True
+            self.back_button.disabled = True
+            self.first_button.style = nextcord.ButtonStyle.gray
+            self.back_button.style = nextcord.ButtonStyle.gray
+        else:
+            self.first_button.disabled = False
+            self.back_button.disabled = False
+            self.first_button.style = nextcord.ButtonStyle.blurple
+            self.back_button.style = nextcord.ButtonStyle.blurple
+
+        if(self.curr_page == len(self.data) // self.items_per_page):
+            self.last_button.disabled = True
+            self.next_button.disabled = True
+            self.last_button.style = nextcord.ButtonStyle.gray
+            self.next_button.style = nextcord.ButtonStyle.gray
+        else:
+            self.last_button.disabled = False
+            self.next_button.disabled = False
+            self.last_button.style = nextcord.ButtonStyle.blurple
+            self.next_button.style = nextcord.ButtonStyle.blurple
+
+    async def update_message(self):
+        self.update_buttons()
+        # print(self.curr_page * self.items_per_page)
+        items = self.data[self.curr_page * self.items_per_page:(self.curr_page + 1) * self.items_per_page]
+        await self.message.edit(embed=self.create_embed(items), view=self)
+
+    @nextcord.ui.button(label = "", style=nextcord.ButtonStyle.success, emoji="\U0001F504")
+    async def sort_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
+        await ctx.response.defer()
+        self.sort()
+        await self.update_message()
+
+
+    @nextcord.ui.button(label = "|<", style=nextcord.ButtonStyle.blurple)
+    async def first_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
+        await ctx.response.defer()
+        self.curr_page = 0
+        await self.update_message()
+    
+    @nextcord.ui.button(label = "<", style=nextcord.ButtonStyle.blurple)
+    async def back_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
+        await ctx.response.defer()
+        self.curr_page -= 1
+        await self.update_message()
+    
+    @nextcord.ui.button(label = ">", style=nextcord.ButtonStyle.blurple)
+    async def next_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
+        await ctx.response.defer()
+        self.curr_page +=1
+        await self.update_message()
+    
+    @nextcord.ui.button(label = ">|", style=nextcord.ButtonStyle.blurple)
+    async def last_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
+        await ctx.response.defer()
+        self.curr_page = len(self.data) // self.items_per_page
+        await self.update_message()
+
 
 def setup(bot):
   bot.add_cog(Money(bot))
