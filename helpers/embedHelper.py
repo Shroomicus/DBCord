@@ -2,18 +2,19 @@ from datetime import datetime
 import nextcord
 
 def defaultEmbed(title, description):
-  defaultColor = nextcord.Colour.from_rgb(255,53,53)
+  defaultColor = nextcord.Colour.from_rgb(131,0,255)
   embed = nextcord.Embed(
     title = title,
     description = description,
     color = defaultColor,
-    #timestamp=datetime.now()
   )
-  # embed.set_author(
-  #   name = "redlink", 
-  #   icon_url = "https://cdn.discordapp.com/avatars/1068987178882961508/6f3711da54540d09e76668dd30bcfacf.webp?size=300"
-  # )
-  # embed.set_footer(text="redlink")
+  return embed
+
+def listEmbed(title, description, items):
+  embed = defaultEmbed(title, description)
+  print(items)
+  for item in items:
+    embed.add_field(name = item[0], value = item[1], inline=False)
   return embed
 
 def logEmbed(title, description):
@@ -23,11 +24,6 @@ def logEmbed(title, description):
     color = nextcord.Colour.light_gray(),
     timestamp=datetime.now()
   )
-  # embed.set_author(
-  #   name = "redlink", 
-  #   icon_url = "https://cdn.discordapp.com/avatars/1068987178882961508/6f3711da54540d09e76668dd30bcfacf.webp?size=300"
-  # )
-  # embed.set_footer(text="redlink")
   return embed
 
 def errEmbed(title, description):
@@ -37,11 +33,6 @@ def errEmbed(title, description):
     color = nextcord.Colour.red(),
     timestamp=datetime.now()
   )
-  # embed.set_author(
-  #   name = "redlink", 
-  #   icon_url = "https://cdn.discordapp.com/avatars/1068987178882961508/6f3711da54540d09e76668dd30bcfacf.webp?size=300"
-  # )
-  # embed.set_footer(text="redlink")
   return embed
 
 def sucEmbed(title, description):
@@ -51,9 +42,4 @@ def sucEmbed(title, description):
     color = nextcord.Colour.green(),
     timestamp=datetime.now()
   )
-  # embed.set_author(
-  #   name = "redlink", 
-  #   icon_url = "https://cdn.discordapp.com/avatars/1068987178882961508/6f3711da54540d09e76668dd30bcfacf.webp?size=300"
-  # )
-  # embed.set_footer(text="redlink")
   return embed
