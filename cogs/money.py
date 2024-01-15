@@ -85,6 +85,13 @@ class ItemView(nextcord.ui.View):
 
     async def send(self, ctx):
         self.message = await ctx.send(view=self)
+        self.first_button.disabled = True
+        self.back_button.disabled = True
+        self.last_button.disabled = True
+        self.next_button.disabled = True
+        self.sort_button.disabled = True
+        self.reverse_button.disabled = True
+        self.select.disabled = True
         await self.message.edit(embed=embedHelper.defaultEmbed(
             "Select a View",
             ""
