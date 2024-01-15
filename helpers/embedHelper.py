@@ -12,7 +12,6 @@ def defaultEmbed(title, description):
 
 def listEmbed(title, description, items):
   embed = defaultEmbed(title, description)
-  print(items)
   for item in items:
     embed.add_field(name = item[0], value = item[1], inline=False)
   return embed
