@@ -54,23 +54,25 @@ Date / Pay Period End,Amount,Source,$/Hr,Hours,Paid?,Deposit?,Excess %,Notes
 11/7/2023,$310.00,Spending (P),,"=IF(C54 = ""Work"", B54/D54/24, """")",FALSE,FALSE,=1,Tail
 11/6/2023,$11.39,Other,,"=IF(C55 = ""Work"", B55/D55/24, """")",TRUE,TRUE,=1/3,Pizza Delivery Fee (Ryan + Angel)
 11/2/2023,$510.74,Work,$14.50,"=IF(C56 = ""Work"", B56/D56/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-10/19/2023,$158.10,Work,$14.50,"=IF(C57 = ""Work"", B57/D57/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
+10/19/2023,$158.05,Work,$14.50,"=IF(C57 = ""Work"", B57/D57/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
 10/18/2023,$794.50,Other,,"=IF(C58 = ""Work"", B58/D58/24, """")",TRUE,TRUE,=1/3,Money Before Tracking / Untracked
 1/11/2023,$363.51,Work,$15.00,"=IF(C59 = ""Work"", B59/D59/24, """")",FALSE,TRUE,=1/3,ITS Work (Trainee?)
 1/11/2023,$25.00,Spending (P),,"=IF(C60 = ""Work"", B60/D60/24, """")",TRUE,FALSE,=1,Brenda Keys
-1/8/2023,$7.20,Spending (P),,"=IF(C61 = ""Work"", B61/D61/24, """")",TRUE,FALSE,=1,Bagels
-1/7/2023,$10.00,Spending (P),,"=IF(C62 = ""Work"", B62/D62/24, """")",TRUE,FALSE,=1,Donation
-1/7/2023,$10.88,Spending (P),,"=IF(C63 = ""Work"", B63/D63/24, """")",TRUE,FALSE,=1,Miniso plush
-1/7/2023,$32.99,Spending (P),,"=IF(C64 = ""Work"", B64/D64/24, """")",TRUE,FALSE,=1,Parm
-1/7/2023,$12.93,Spending (P),,"=IF(C65 = ""Work"", B65/D65/24, """")",TRUE,FALSE,=1,Creperie
-1/6/2023,$32.66,Spending (P),,"=IF(C66 = ""Work"", B66/D66/24, """")",TRUE,FALSE,=1,Ichiran
-1/6/2023,$30.00,Spending (P),,"=IF(C67 = ""Work"", B67/D67/24, """")",TRUE,FALSE,=1,Travel
-1/6/2023,$38.54,Spending (P),,"=IF(C68 = ""Work"", B68/D68/24, """")",TRUE,FALSE,=1,Piercing
-1/6/2023,"$1,000.00",Other,,"=IF(C69 = ""Work"", B69/D69/24, """")",TRUE,TRUE,=1/3,Donation
-1/6/2023,$37.38,Spending (P),,"=IF(C70 = ""Work"", B70/D70/24, """")",TRUE,FALSE,=1,Friedmans
-1/6/2023,$11.18,Spending (P),,"=IF(C71 = ""Work"", B71/D71/24, """")",TRUE,FALSE,=1,Laughing Man Cafe
-1/5/2023,$6.47,Spending (P),,"=IF(C72 = ""Work"", B72/D72/24, """")",TRUE,FALSE,=1,Stuffing
-1/5/2023,$9.84,Spending (P),,"=IF(C73 = ""Work"", B73/D73/24, """")",TRUE,FALSE,=1,Food
-1/5/2023,$38.10,Spending (S),,"=IF(C74 = ""Work"", B74/D74/24, """")",TRUE,FALSE,=0,Student Loan Interest Payment
-1/5/2023,$9.71,Spending (P),,"=IF(C75 = ""Work"", B75/D75/24, """")",TRUE,FALSE,=1,Gas Station Food
-1/13/2023,$6.39,Spending (P),,"=IF(C76 = ""Work"", B76/D76/24, """")",TRUE,FALSE,=1,Shipping Cost
+1/8/2024,$7.20,Spending (P),,"=IF(C61 = ""Work"", B61/D61/24, """")",TRUE,FALSE,=1,Bagels
+1/7/2024,$10.00,Spending (P),,"=IF(C62 = ""Work"", B62/D62/24, """")",TRUE,FALSE,=1,Donation
+1/7/2024,$10.88,Spending (P),,"=IF(C63 = ""Work"", B63/D63/24, """")",TRUE,FALSE,=1,Miniso plush
+1/7/2024,$32.99,Spending (P),,"=IF(C64 = ""Work"", B64/D64/24, """")",TRUE,FALSE,=1,Parm
+1/7/2024,$12.93,Spending (P),,"=IF(C65 = ""Work"", B65/D65/24, """")",TRUE,FALSE,=1,Creperie
+1/6/2024,$32.66,Spending (P),,"=IF(C66 = ""Work"", B66/D66/24, """")",TRUE,FALSE,=1,Ichiran
+1/6/2024,$30.00,Spending (P),,"=IF(C67 = ""Work"", B67/D67/24, """")",TRUE,FALSE,=1,Travel
+1/6/2024,$38.54,Spending (P),,"=IF(C68 = ""Work"", B68/D68/24, """")",TRUE,FALSE,=1,Piercing
+1/6/2024,"$1,000.00",Other,,"=IF(C69 = ""Work"", B69/D69/24, """")",TRUE,TRUE,=1/3,Donation
+1/6/2024,$37.38,Spending (P),,"=IF(C70 = ""Work"", B70/D70/24, """")",TRUE,FALSE,=1,Friedmans
+1/6/2024,$11.18,Spending (P),,"=IF(C71 = ""Work"", B71/D71/24, """")",TRUE,FALSE,=1,Laughing Man Cafe
+1/5/2024,$6.47,Spending (P),,"=IF(C72 = ""Work"", B72/D72/24, """")",TRUE,FALSE,=1,Stuffing
+1/5/2024,$9.84,Spending (P),,"=IF(C73 = ""Work"", B73/D73/24, """")",TRUE,FALSE,=1,Food
+1/5/2024,$38.10,Spending (S),,"=IF(C74 = ""Work"", B74/D74/24, """")",TRUE,FALSE,=0,Student Loan Interest Payment
+1/5/2024,$9.71,Spending (P),,"=IF(C75 = ""Work"", B75/D75/24, """")",TRUE,FALSE,=1,Gas Station Food
+1/13/2024,$6.39,Spending (P),,"=IF(C76 = ""Work"", B76/D76/24, """")",TRUE,FALSE,=1,Shipping Cost
+1/15/2024,$100.00,Work,,,TRUE,FALSE,=1/3,ITS Work (Trainee)
+1/15/2024,$100.00,Work,,,TRUE,FALSE,=1/3,ITS Work (Trainee)
