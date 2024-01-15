@@ -388,18 +388,17 @@ class Money(commands.Cog):
                     date: str = nextcord.SlashOption(description="What date will this be recieved? (M/D/Y)"),
                     deposited: float = nextcord.SlashOption(description="How much are you depositing?"),
                     work: str = nextcord.SlashOption(description="Is this deposit from work?", choices={"Yes":"Work", "No":"Other"}),
-                    reason: str = nextcord.SlashOption(description="Where is the deposit from?"),
                     recieved: str = nextcord.SlashOption(description="Has this been recieved yet?", choices={"Yes":'TRUE', "No":'FALSE'}),
+                    reason: str = nextcord.SlashOption(description="Where is the deposit from?", required=False),
                     ):
         """
         Add a purchase made to the database.
         """
         data = dataFromCsv()
 
-        if(work == 'Work'):
-            excess = '=1'
-        else:
-            excess = '=0'
+        if(work == "Work"):
+            reason = "ITS Work (Trainee)"
+        
         data.append([
             date,
             f'${deposited}',
