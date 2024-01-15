@@ -128,6 +128,8 @@ class ItemView(nextcord.ui.View):
         return embedHelper.listEmbed("Unpaid Items", "Sorting by: " + sortMess, formatted, self.curr_page)
     
     def update_buttons(self):
+        self.sort_button.disabled = False
+        self.reverse_button.disabled = False
         if(self.curr_page == 0):
             self.first_button.disabled = True
             self.back_button.disabled = True
