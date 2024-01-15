@@ -91,7 +91,6 @@ class ItemView(nextcord.ui.View):
         self.next_button.disabled = True
         self.sort_button.disabled = True
         self.reverse_button.disabled = True
-        self.select.disabled = True
         await self.message.edit(embed=embedHelper.defaultEmbed(
             "Select a View",
             ""
