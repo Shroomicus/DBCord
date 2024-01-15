@@ -10,11 +10,10 @@ def defaultEmbed(title, description):
   )
   return embed
 
-def listEmbed(title, description, items, pagenum: int):
+def listEmbed(title, description, items):
   embed = defaultEmbed(title, description)
   for item in items:
     embed.add_field(name = item[0], value = item[1], inline=False)
-  embed.add_field(name="", value=f"Page Number: {pagenum + 1}", inline=False)
   return embed
 
 def logEmbed(title, description):

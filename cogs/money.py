@@ -1,3 +1,4 @@
+from typing import Optional
 import nextcord
 import datetime
 from nextcord.ext import commands
@@ -125,7 +126,8 @@ class ItemView(nextcord.ui.View):
             sortMess = "Date"
         elif(self.sortType == 3):
             sortMess = "Impact"
-        return embedHelper.listEmbed("Unpaid Items", "Sorting by: " + sortMess, formatted, self.curr_page)
+        formatted.append(["", f"Page Number: {self.curr_page + 1}"])
+        return embedHelper.listEmbed("Unpaid Items", "Sorting by: " + sortMess, formatted)
     
     def update_buttons(self):
         self.sort_button.disabled = False
@@ -243,10 +245,34 @@ class ItemView(nextcord.ui.View):
             "Too much time has elapsed since this window was interacted with."
         ), view=self)
 
+async def send_data(bot, ctx: Optional[int] = None):
+    sheet = tables.worksheet("Data")
+    if(ctx == None):
+        ctx = bot.get_channel(1196581541522980987)
+
+    raw = sheet.get_all_values()
+
+    data = []
+    data.append(["Current Total", raw[3][1]])
+    data.append(["Current Savings", raw[0][4]])
+    data.append(["Current Excess", raw[0][7]])
+
+    await ctx.send(embed=embedHelper.listEmbed(
+        "Savings Statistics",
+        f"{datetime.datetime.today().strftime('%B %d, %Y')}\n" + 
+        f"{datetime.datetime.today().strftime('%I:%M:%S %p')}",
+        data
+    ))
 
 class Money(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    @nextcord.slash_command(
+        guild_ids=guilds
+    )
+    async def stats(self, ctx):
+        await send_data(self.bot, ctx)
 
     @nextcord.slash_command(
         guild_ids=guilds
@@ -291,6 +317,7 @@ class Money(commands.Cog):
             "Change Successful!",
             "Updated data pushed to the database successfully."
         ))
+        await send_data(self.bot)
 
     @entry.subcommand()
     async def show(self, ctx, 
@@ -324,6 +351,7 @@ class Money(commands.Cog):
             "Update Successful!",
             "Internal payment data has been fully updated."
         ))
+        await send_data(self.bot)
 
     @money.subcommand()
     async def spend(self, ctx, 
@@ -357,6 +385,7 @@ class Money(commands.Cog):
             "Update Successful!",
             "Added purchase to the database."
         ))
+        await send_data(self.bot)
 
     @money.subcommand()
     async def prespend(self, ctx, 
@@ -390,6 +419,7 @@ class Money(commands.Cog):
             "Update Successful!",
             "Added purchase to the database."
         ))
+        await send_data(self.bot)
 
     @money.subcommand()
     async def deposit(self, ctx,
@@ -424,6 +454,7 @@ class Money(commands.Cog):
             "Update Successful!",
             "Added deposit to the database."
         ))
+        await send_data(self.bot)
 
     @money.subcommand()
     async def list(self, ctx):
