@@ -60,37 +60,56 @@ def create_itemview(list):
     items = []
     for item in list:
         date = [int(x) for x in item[0].split("/")]
-        print(date)
         date = datetime.datetime(date[2], date[0], date[1]).timestamp()
-        items.append([item[-2], int(item[-1]), date, float(item[1][1:].replace(',', ''))])
+        items.append([
+            item[8], # Reason
+            int(item[9]), # Index
+            date, # Date
+            float(item[1][1:].replace(',', '')), # Impact
+            item[2], # Source
+            item[5], # Paid?
+            item[6], # Deposit?
+        ])
     
     itemview = ItemView()
-    itemview.data = items
-    itemview.sort()
+    itemview.fullData = items
     return itemview
 
 class ItemView(nextcord.ui.View):
-    sortType = 0
+    sortType = 1
     curr_page = 0
     items_per_page = 4
     def __init__(self):
-        super().__init__(timeout = None)
+        super().__init__(timeout = 30)
         self.value = None
 
     async def send(self, ctx):
         self.message = await ctx.send(view=self)
-        await self.update_message()
+        await self.message.edit(embed=embedHelper.defaultEmbed(
+            "Select a View",
+            ""
+        ), view=self)
+        # await self.update_message()
 
     def sort(self):
-        self.sortType = (self.sortType + 1) % 4
         self.data.sort(key = lambda x: x[self.sortType])
+
+    def advanceSort(self):
+        self.sortType = (self.sortType + 1) % 4
 
     def create_embed(self, items):
         formatted = []
         for item in items:
+            if(item[6] == 'FALSE'):
+                item[3] *= -1
+
             formatted.append([
                 item[0],
-                f"Index: `{item[1]}`\nDate: `{datetime.datetime.fromtimestamp(item[2]).strftime('%m/%d/%Y')}\n`Price: `${'{0:.2f}'.format(item[3])}`\n"
+                f"Index: `{item[1]}`\n" +
+                f"Date: `{datetime.datetime.fromtimestamp(item[2]).strftime('%m/%d/%Y')}`\n" +
+                f"Impact: `${'{0:.2f}'.format(item[3])}`\n" +
+                f"Source: `{item[4]}`\n" + 
+                f"Paid?: `{item[5]}`\n"
             ])
         if(self.sortType == 0):
             sortMess = "Name"
@@ -99,8 +118,8 @@ class ItemView(nextcord.ui.View):
         elif(self.sortType == 2):
             sortMess = "Date"
         elif(self.sortType == 3):
-            sortMess = "Price"
-        return embedHelper.listEmbed("Unpaid Items", "Sorting by: " + sortMess, formatted)
+            sortMess = "Impact"
+        return embedHelper.listEmbed("Unpaid Items", "Sorting by: " + sortMess, formatted, self.curr_page)
     
     def update_buttons(self):
         if(self.curr_page == 0):
@@ -130,6 +149,40 @@ class ItemView(nextcord.ui.View):
         items = self.data[self.curr_page * self.items_per_page:(self.curr_page + 1) * self.items_per_page]
         await self.message.edit(embed=self.create_embed(items), view=self)
 
+    @nextcord.ui.string_select(
+        placeholder="What would you like to view?",
+        options=[
+            nextcord.SelectOption(label="All", value="0", description="List all entries in the database."),
+            nextcord.SelectOption(label="Unpaid", value="1", description="List all unpaid entries in the database."),
+            nextcord.SelectOption(label="Deposits", value="2", description="List all deposit entries in the database."),
+            nextcord.SelectOption(label="Payments", value="3", description="List all spending entries in the database."),
+        ]
+    )
+    async def select(self, select: nextcord.ui.StringSelect, ctx: nextcord.Interaction):
+        tempData = []
+        if(select.values[0] == "0"):
+            tempData = self.fullData
+
+        if(select.values[0] == "1"):
+            for item in self.fullData:
+                if(item[5] == 'FALSE'):
+                    tempData.append(item)
+
+        if(select.values[0] == "2"):
+            for item in self.fullData:
+                if(item[6] == 'TRUE'):
+                    tempData.append(item)
+
+        if(select.values[0] == "3"):
+            for item in self.fullData:
+                if(item[6] == 'FALSE'):
+                    tempData.append(item)
+
+        self.data = tempData
+        self.curr_page = 0
+        self.sort()
+        await self.update_message()
+
     @nextcord.ui.button(label = "|<", style=nextcord.ButtonStyle.blurple)
     async def first_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
         await ctx.response.defer()
@@ -157,14 +210,31 @@ class ItemView(nextcord.ui.View):
     @nextcord.ui.button(label = "", style=nextcord.ButtonStyle.success, emoji="\U0001F504")
     async def sort_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
         await ctx.response.defer()
+        self.advanceSort()
         self.sort()
+        self.curr_page = 0
         await self.update_message()
-
+    
     @nextcord.ui.button(label = "", style=nextcord.ButtonStyle.success, emoji="\U00002195")
-    async def sort_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
+    async def reverse_button(self, button: nextcord.ui.Button, ctx: nextcord.Interaction):
         await ctx.response.defer()
         self.data.reverse()
         await self.update_message()
+
+    async def on_timeout(self):
+        self.first_button.disabled = True
+        self.back_button.disabled = True
+        self.last_button.disabled = True
+        self.next_button.disabled = True
+        self.sort_button.disabled = True
+        self.reverse_button.disabled = True
+        self.select.disabled = True
+
+        await self.message.edit(embed=embedHelper.defaultEmbed(
+            "This View Has Expired",
+            "Too much time has elapsed since this window was interacted with."
+        ), view=self)
+
 
 class Money(commands.Cog):
     def __init__(self, bot):
@@ -314,38 +384,52 @@ class Money(commands.Cog):
         ))
 
     @money.subcommand()
-    async def list_unpaid(self, ctx):
+    async def deposit(self, ctx,
+                    date: str = nextcord.SlashOption(description="What date will this be recieved? (M/D/Y)"),
+                    deposited: float = nextcord.SlashOption(description="How much are you depositing?"),
+                    work: str = nextcord.SlashOption(description="Is this deposit from work?", choices={"Yes":"Work", "No":"Other"}),
+                    reason: str = nextcord.SlashOption(description="Where is the deposit from?"),
+                    recieved: str = nextcord.SlashOption(description="Has this been recieved yet?", choices={"Yes":'TRUE', "No":'FALSE'}),
+                    ):
+        """
+        Add a purchase made to the database.
+        """
+        data = dataFromCsv()
+
+        if(work == 'Work'):
+            excess = '=1'
+        else:
+            excess = '=0'
+        data.append([
+            date,
+            f'${deposited}',
+            work,
+            '','',
+            recieved, 'TRUE',
+            '=1/3',
+            reason
+        ])
+
+        updateSheet(data)
+        updateCsv(dataFromSheet())
+
+        await ctx.send(embed = embedHelper.sucEmbed(
+            "Update Successful!",
+            "Added deposit to the database."
+        ))
+
+    @money.subcommand()
+    async def list(self, ctx):
         """
         List items that haven't been paid for.
         This could be a future wage, debt, or planned purchase.
         """
-        data = dataFromCsv()
-        unpaid = []
+        data = dataFromCsv()[1:]
         for ind in range(len(data)):
-            if(data[ind][5] == "FALSE"):
-                unpaid.append(data[ind])
-                unpaid[-1].append(ind)
+            data[ind].append(ind)
 
-        unpaid_view = create_itemview(unpaid)
+        unpaid_view = create_itemview(data)
         await unpaid_view.send(ctx)
-
-    @money.subcommand()
-    async def list_deposits(self, ctx):
-        """
-        List cash deposits to the database.
-        """
-        data = dataFromCsv()
-        deposits = []
-        for ind in range(len(data)):
-            if(data[ind][6] == "TRUE"):
-                deposits.append(data[ind])
-                deposits[-1].append(ind)
-        
-        print(deposits)
-
-        deposit_view = create_itemview(deposits)
-        await deposit_view.send(ctx)
-
 
 def setup(bot):
   bot.add_cog(Money(bot))
