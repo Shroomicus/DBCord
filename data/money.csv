@@ -53,7 +53,7 @@ Date / Pay Period End,Amount,Source,$/Hr,Hours,Paid?,Deposit?,Excess %,Notes
 12/18/2023,$10.00,Other,,"=IF(C53 = ""Work"", B53/D53/24, """")",TRUE,TRUE,=1,Yarn payment
 12/18/2023,$23.81,Other,,"=IF(C54 = ""Work"", B54/D54/24, """")",TRUE,TRUE,=1,Etsy refund
 12/23/2023,$15.62,Other,,"=IF(C55 = ""Work"", B55/D55/24, """")",TRUE,FALSE,=1,More Yarn
-12/26/2023,$0.40,Other,,"=IF(C56 = ""Work"", B56/D56/24, """")",TRUE,FALSE,=1,Penny?
+12/26/2023,$0.36,Other,,"=IF(C56 = ""Work"", B56/D56/24, """")",TRUE,FALSE,=1,Penny?
 12/26/2023,$25.00,Spending (P),,"=IF(C57 = ""Work"", B57/D57/24, """")",TRUE,FALSE,=1,Leo Commission!!
 12/28/2023,$212.14,Work,$14.50,"=IF(C58 = ""Work"", B58/D58/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
 1/5/2024,$6.47,Spending (P),,"=IF(C59 = ""Work"", B59/D59/24, """")",TRUE,FALSE,=1,Stuffing
@@ -71,7 +71,14 @@ Date / Pay Period End,Amount,Source,$/Hr,Hours,Paid?,Deposit?,Excess %,Notes
 1/7/2024,$32.99,Spending (P),,"=IF(C71 = ""Work"", B71/D71/24, """")",TRUE,FALSE,=1,Parm
 1/7/2024,$12.93,Spending (P),,"=IF(C72 = ""Work"", B72/D72/24, """")",TRUE,FALSE,=1,Creperie
 1/8/2024,$7.20,Spending (P),,"=IF(C73 = ""Work"", B73/D73/24, """")",TRUE,FALSE,=1,Bagels
-1/11/2024,$363.51,Work,$15.00,"=IF(C74 = ""Work"", B74/D74/24, """")",FALSE,TRUE,=1/3,ITS Work (Trainee?)
+1/11/2024,$360.36,Work,$15.00,"=IF(C74 = ""Work"", B74/D74/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee?)
 1/11/2024,$25.00,Spending (P),,"=IF(C75 = ""Work"", B75/D75/24, """")",TRUE,FALSE,=1,Brenda Keys
 1/13/2024,$6.39,Spending (P),,"=IF(C76 = ""Work"", B76/D76/24, """")",TRUE,FALSE,=1,Shipping Cost
-1/25/2024,$42.83,Work,,,FALSE,TRUE,=1/3,ITS Work (Trainee)
+1/25/2024,$371.33,Work,,,FALSE,TRUE,=1/3,ITS Work (Trainee)
+1/17/2024,$35.00,Spending (S),,,TRUE,FALSE,=0,Expert TA (Physics)
+1/17/2023,$29.07,Spending (P),,,TRUE,FALSE,=1,Joanns Yarn
+1/18/2024,$103.00,Spending (S),,,TRUE,FALSE,=0,Cengage Textbook (Stats)
+1/19/2024,$40.00,Spending (P),,,FALSE,FALSE,=1,Wallet
+1/19/2023,$21.39,Other,,"=IF(C82 = ""Work"", B82/D82/24, """")",TRUE,TRUE,=2/3,Hat
+1/21/2024,$15.82,Spending (P),,,TRUE,FALSE,=1,Chipotle
+1/21/2024,$66.05,Spending (P),,,TRUE,FALSE,=1,Frieren + Bocchi Chains
