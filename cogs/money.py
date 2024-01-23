@@ -327,7 +327,7 @@ class Money(commands.Cog):
         Display a given entries information given the index.
         """
         data = dataFromCsv()
-        item = data[index]
+        item = data[index+1]
 
         await ctx.send(embed = embedHelper.defaultEmbed(
             item[-1],
