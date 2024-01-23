@@ -308,7 +308,7 @@ class Money(commands.Cog):
         """
         data = dataFromCsv()
         
-        data[index][int(section)] = newval
+        data[index+1][int(section)] = newval
 
         updateSheet(data)
         updateCsv(dataFromSheet())
