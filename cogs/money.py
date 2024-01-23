@@ -312,8 +312,9 @@ class Money(commands.Cog):
 
         updateSheet(data)
         updateCsv(dataFromSheet())
+        await ctx.response.defer()
 
-        await ctx.send(embed = embedHelper.defaultEmbed(
+        await ctx.followup.send(embed = embedHelper.defaultEmbed(
             "Change Successful!",
             "Updated data pushed to the database successfully."
         ))
@@ -347,7 +348,8 @@ class Money(commands.Cog):
         Update bot's data with that from the google sheet
         """
         updateCsv(dataFromSheet())
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.response.defer()
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Internal payment data has been fully updated."
         ))
@@ -381,7 +383,8 @@ class Money(commands.Cog):
         updateSheet(data)
         updateCsv(dataFromSheet())
 
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.response.defer()
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added purchase to the database."
         ))
@@ -414,8 +417,8 @@ class Money(commands.Cog):
 
         updateSheet(data)
         updateCsv(dataFromSheet())
-
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.response.defer()
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added purchase to the database."
         ))
@@ -449,8 +452,8 @@ class Money(commands.Cog):
 
         updateSheet(data)
         updateCsv(dataFromSheet())
-
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.response.defer()
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added deposit to the database."
         ))
