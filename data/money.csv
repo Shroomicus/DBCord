@@ -82,3 +82,4 @@ Date / Pay Period End,Amount,Source,$/Hr,Hours,Paid?,Deposit?,Excess %,Notes
 1/19/2023,$21.39,Other,,"=IF(C82 = ""Work"", B82/D82/24, """")",TRUE,TRUE,=2/3,Hat
 1/21/2024,$15.82,Spending (P),,,TRUE,FALSE,=1,Chipotle
 1/21/2024,$66.05,Spending (P),,,TRUE,FALSE,=1,Frieren + Bocchi Chains
+1/23/2024,$10.00,Spending (P),,,TRUE,FALSE,=1,testt
