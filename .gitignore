@@ -161,4 +161,4 @@ cython_debug/
 
 gkey.json
 .csv
-data/money.csv
+data\money.csv
