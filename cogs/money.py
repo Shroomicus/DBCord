@@ -371,7 +371,7 @@ class Money(commands.Cog):
         elif(personal == 'Spending (S)'):
             excess = '=0'
         else:
-            excess = '=1/3'
+            excess = '=1/2'
         data.append([
             datetime.datetime.today().strftime('%m/%d/%Y'),
             f'${spent}',
@@ -407,7 +407,7 @@ class Money(commands.Cog):
         elif(personal == 'Spending (S)'):
             excess = '=0'
         else:
-            excess = '=1/3'
+            excess = '=1/2'
         data.append([
             datetime.datetime.today().strftime('%m/%d/%Y'),
             f'${spent}',
