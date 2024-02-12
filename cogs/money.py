@@ -306,15 +306,14 @@ class Money(commands.Cog):
         """
         Update a given entries information given a section and new data.
         """
-        await ctx.response.defer()
         data = dataFromCsv()
         
-        data[index+1][int(section)] = newval
+        data[index][int(section)] = newval
 
         updateSheet(data)
         updateCsv(dataFromSheet())
 
-        await ctx.followup.send(embed = embedHelper.defaultEmbed(
+        await ctx.send(embed = embedHelper.defaultEmbed(
             "Change Successful!",
             "Updated data pushed to the database successfully."
         ))
@@ -327,11 +326,10 @@ class Money(commands.Cog):
         """
         Display a given entries information given the index.
         """
-        await ctx.response.defer()
         data = dataFromCsv()
-        item = data[index+1]
+        item = data[index]
 
-        await ctx.followup.send(embed = embedHelper.defaultEmbed(
+        await ctx.send(embed = embedHelper.defaultEmbed(
             item[-1],
             f"Index: `{index}`\n" + 
             f"Date: `{item[0]}`\n" + 
@@ -348,9 +346,8 @@ class Money(commands.Cog):
         """
         Update bot's data with that from the google sheet
         """
-        await ctx.response.defer()
         updateCsv(dataFromSheet())
-        await ctx.followup.send(embed = embedHelper.sucEmbed(
+        await ctx.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Internal payment data has been fully updated."
         ))
@@ -365,7 +362,6 @@ class Money(commands.Cog):
         """
         Add a purchase made to the database.
         """
-        await ctx.response.defer()
         data = dataFromCsv()
 
         if(personal == 'Spending (P)'):
@@ -384,7 +380,8 @@ class Money(commands.Cog):
 
         updateSheet(data)
         updateCsv(dataFromSheet())
-        await ctx.followup.send(embed = embedHelper.sucEmbed(
+
+        await ctx.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added purchase to the database."
         ))
@@ -393,19 +390,20 @@ class Money(commands.Cog):
     @money.subcommand()
     async def prespend(self, ctx, 
                     spent: float = nextcord.SlashOption(description="How much was spent?"),
-                    personal: str = nextcord.SlashOption(description="Was the purchase personal?", choices={"Yes":"Spending (P)", "No":"Spending (S)"}),
+                    personal: str = nextcord.SlashOption(description="Was the purchase personal?", choices={"Yes":"Spending (P)", "No":"Spending (S)", "Food":"Food"}),
                     reason:str = nextcord.SlashOption(description="What was the purchase for?")
                     ):
         """
         Add a future purchase made to the database.
         """
-        await ctx.response.defer()
         data = dataFromCsv()
 
         if(personal == 'Spending (P)'):
             excess = '=1'
-        else:
+        elif(personal == 'Spending (S)'):
             excess = '=0'
+        else:
+            excess = '=1/3'
         data.append([
             datetime.datetime.today().strftime('%m/%d/%Y'),
             f'${spent}',
@@ -418,7 +416,8 @@ class Money(commands.Cog):
 
         updateSheet(data)
         updateCsv(dataFromSheet())
-        await ctx.followup.send(embed = embedHelper.sucEmbed(
+
+        await ctx.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added purchase to the database."
         ))
@@ -435,7 +434,6 @@ class Money(commands.Cog):
         """
         Add a purchase made to the database.
         """
-        await ctx.response.defer()
         data = dataFromCsv()
 
         if(work == "Work"):
@@ -453,7 +451,8 @@ class Money(commands.Cog):
 
         updateSheet(data)
         updateCsv(dataFromSheet())
-        await ctx.followup.send(embed = embedHelper.sucEmbed(
+
+        await ctx.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added deposit to the database."
         ))
