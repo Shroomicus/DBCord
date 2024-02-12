@@ -390,7 +390,7 @@ class Money(commands.Cog):
     @money.subcommand()
     async def prespend(self, ctx, 
                     spent: float = nextcord.SlashOption(description="How much was spent?"),
-                    personal: str = nextcord.SlashOption(description="Was the purchase personal?", choices={"Yes":"Spending (P)", "No":"Spending (S)"}),
+                    personal: str = nextcord.SlashOption(description="Was the purchase personal?", choices={"Yes":"Spending (P)", "No":"Spending (S)", "Food":"Food"}),
                     reason:str = nextcord.SlashOption(description="What was the purchase for?")
                     ):
         """
@@ -400,8 +400,10 @@ class Money(commands.Cog):
 
         if(personal == 'Spending (P)'):
             excess = '=1'
-        else:
+        elif(personal == 'Spending (S)'):
             excess = '=0'
+        else:
+            excess = '=1/3'
         data.append([
             datetime.datetime.today().strftime('%m/%d/%Y'),
             f'${spent}',
