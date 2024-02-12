@@ -25,9 +25,11 @@ def dataFromSheet():
     data = [item for item in data if item[0] != '']
     formulas = sheet.col_values(8, value_render_option='FORMULA')
     hours = sheet.col_values(5, value_render_option='FORMULA')
+    amount = sheet.col_values(5, value_render_option='FORMULA')
     for ind in range(len(data)):
         data[ind][7] = formulas[ind]
         data[ind][4] = hours[ind]
+        data[ind][1] = amount[ind]
         temp = data[ind][-1]
         data[ind] = data[ind][:8]
         data[ind].append(temp)
