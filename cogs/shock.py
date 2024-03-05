@@ -67,7 +67,7 @@ class Shock(commands.Cog):
             return
         await ctx.send(embed = embedHelper.sucEmbed(
             "Shock Successful!",
-            "Please await your whines."
+            "Please await your cries."
         ))
 
     @nextcord.slash_command(
@@ -107,7 +107,7 @@ class Shock(commands.Cog):
             return
         await ctx.send(embed = embedHelper.sucEmbed(
             "Shock Successful!",
-            "Please await your whines."
+            "Please await your cries."
         ))
         for i in range(times-1):
             x = power
@@ -136,7 +136,7 @@ class Shock(commands.Cog):
             return
         await ctx.send(embed = embedHelper.sucEmbed(
             "Beep Successful!",
-            "Please await your whines."
+            "Please await your cries."
         ))
 
     @nextcord.slash_command(
@@ -148,8 +148,8 @@ class Shock(commands.Cog):
         """
         BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP BEEP
         """
-        whitelist = jsonHelper.getJson("whitelist.json")
-        if(id not in whitelist):
+        whitelist = jsonHelper.getJson("data/whitelist.json")
+        if(ctx.user.id not in whitelist):
             await ctx.send(embed = embedHelper.errEmbed(
                 "Shock Unsuccessful!",
                 "You are not whitelisted!"
@@ -204,7 +204,7 @@ class Shock(commands.Cog):
             return
         await ctx.send(embed = embedHelper.sucEmbed(
             "Vibe Successful!",
-            "Please await your whines."
+            "Please await your cries."
         ))
 
     @nextcord.slash_command(
@@ -244,7 +244,7 @@ class Shock(commands.Cog):
             return
         await ctx.send(embed = embedHelper.sucEmbed(
             "Vibe Successful!",
-            "Please await your whines."
+            "Please await your cries."
         ))
         for i in range(times-1):
             x = power
