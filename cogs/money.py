@@ -248,6 +248,7 @@ class ItemView(nextcord.ui.View):
         ), view=self)
 
 async def send_data(bot, ctx: Optional[int] = None):
+    await ctx.response.defer()
     sheet = tables.worksheet("Data")
     if(ctx == None):
         ctx = bot.get_channel(1196581541522980987)
@@ -259,7 +260,7 @@ async def send_data(bot, ctx: Optional[int] = None):
     data.append(["Current Savings", raw[0][4]])
     data.append(["Current Excess", raw[0][7]])
 
-    await ctx.send(embed=embedHelper.listEmbed(
+    await ctx.followup.send(embed=embedHelper.listEmbed(
         "Savings Statistics",
         f"{datetime.datetime.today().strftime('%B %d, %Y')}\n" + 
         f"{datetime.datetime.today().strftime('%I:%M:%S %p')}",
@@ -308,6 +309,7 @@ class Money(commands.Cog):
         """
         Update a given entries information given a section and new data.
         """
+        await ctx.response.defer()
         data = dataFromCsv()
         
         data[index][int(section)] = newval
@@ -315,7 +317,7 @@ class Money(commands.Cog):
         updateSheet(data)
         updateCsv(dataFromSheet())
 
-        await ctx.send(embed = embedHelper.defaultEmbed(
+        await ctx.followup.send(embed = embedHelper.defaultEmbed(
             "Change Successful!",
             "Updated data pushed to the database successfully."
         ))
@@ -328,10 +330,11 @@ class Money(commands.Cog):
         """
         Display a given entries information given the index.
         """
+        await ctx.response.defer()
         data = dataFromCsv()
         item = data[index]
 
-        await ctx.send(embed = embedHelper.defaultEmbed(
+        await ctx.followup.send(embed = embedHelper.defaultEmbed(
             item[-1],
             f"Index: `{index}`\n" + 
             f"Date: `{item[0]}`\n" + 
@@ -348,8 +351,9 @@ class Money(commands.Cog):
         """
         Update bot's data with that from the google sheet
         """
+        await ctx.response.defer()
         updateCsv(dataFromSheet())
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Internal payment data has been fully updated."
         ))
@@ -364,6 +368,7 @@ class Money(commands.Cog):
         """
         Add a purchase made to the database.
         """
+        await ctx.response.defer()
         data = dataFromCsv()
 
         if(personal == 'Spending (P)'):
@@ -385,7 +390,7 @@ class Money(commands.Cog):
         updateSheet(data)
         updateCsv(dataFromSheet())
 
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added purchase to the database."
         ))
@@ -400,6 +405,7 @@ class Money(commands.Cog):
         """
         Add a future purchase made to the database.
         """
+        await ctx.response.defer()
         data = dataFromCsv()
 
         if(personal == 'Spending (P)'):
@@ -421,7 +427,7 @@ class Money(commands.Cog):
         updateSheet(data)
         updateCsv(dataFromSheet())
 
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.followupsend(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added purchase to the database."
         ))
@@ -438,6 +444,7 @@ class Money(commands.Cog):
         """
         Add a purchase made to the database.
         """
+        await ctx.response.defer()
         data = dataFromCsv()
 
         if(work == "Work"):
@@ -456,7 +463,7 @@ class Money(commands.Cog):
         updateSheet(data)
         updateCsv(dataFromSheet())
 
-        await ctx.send(embed = embedHelper.sucEmbed(
+        await ctx.followup.send(embed = embedHelper.sucEmbed(
             "Update Successful!",
             "Added deposit to the database."
         ))
