@@ -4,7 +4,7 @@ import datetime
 from nextcord.ext import commands
 from helpers import jsonHelper, embedHelper
 config = jsonHelper.loadConfig()
-guilds = config["guilds"]
+guilds = [1195843192428433468]
 
 import csv
 import gspread

@@ -1,85 +1,96 @@
 Date / Pay Period End,Amount,Source,$/Hr,Hours,Paid?,Deposit?,Excess %,Notes
-10/18/2023,$794.50,Other,,"=IF(C2 = ""Work"", B2/D2/24, """")",TRUE,TRUE,=1/3,Money Before Tracking / Untracked
-10/19/2023,$158.05,Work,$14.50,"=IF(C3 = ""Work"", B3/D3/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-11/2/2023,$510.74,Work,$14.50,"=IF(C4 = ""Work"", B4/D4/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-11/6/2023,$11.39,Other,,"=IF(C5 = ""Work"", B5/D5/24, """")",TRUE,TRUE,=1/3,Pizza Delivery Fee (Ryan + Angel)
-11/7/2023,$149.06,Spending (P),,"=IF(C6 = ""Work"", B6/D6/24, """")",TRUE,FALSE,=1,Shock Collar
-11/7/2023,$310.00,Spending (P),,"=IF(C7 = ""Work"", B7/D7/24, """")",FALSE,FALSE,=1,Tail
-11/9/2023,$9.18,Spending (P),,"=IF(C8 = ""Work"", B8/D8/24, """")",TRUE,FALSE,=1,Risk of Rain
-11/9/2023,$12.00,Spending (P),,"=IF(C9 = ""Work"", B9/D9/24, """")",TRUE,FALSE,=1,Axolotl (Aemilia)
-11/10/2023,$81.40,Spending (P),,"=IF(C10 = ""Work"", B10/D10/24, """")",TRUE,FALSE,=1,Clothes
-11/11/2023,$75.01,Spending (P),,"=IF(C11 = ""Work"", B11/D11/24, """")",TRUE,FALSE,=1,Earbuds
-11/13/2023,$8.63,Spending (P),,"=IF(C12 = ""Work"", B12/D12/24, """")",TRUE,FALSE,=1,Sticky Tabs
 11/14/2023,$9.71,Spending (P),,"=IF(C13 = ""Work"", B13/D13/24, """")",TRUE,FALSE,=1,Screen Protectors
-11/14/2023,$4.71,Spending (P),,"=IF(C14 = ""Work"", B14/D14/24, """")",TRUE,FALSE,=1,Cookie
-11/15/2023,$4.00,Spending (P),,"=IF(C15 = ""Work"", B15/D15/24, """")",TRUE,FALSE,=1,Sam Gift
-11/15/2023,$10.22,Spending (P),,"=IF(C16 = ""Work"", B16/D16/24, """")",TRUE,FALSE,=1,Binder
-11/16/2023,$470.38,Work,$14.50,"=IF(C17 = ""Work"", B17/D17/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-11/19/2023,$5.00,Spending (P),,"=IF(C18 = ""Work"", B18/D18/24, """")",TRUE,FALSE,=1,Fun Drink
-11/21/2023,$503.00,Other,,"=IF(C19 = ""Work"", B19/D19/24, """")",TRUE,TRUE,=1/3,Old Cash Deposit
-11/22/2023,$2.90,Spending (P),,"=IF(C20 = ""Work"", B20/D20/24, """")",TRUE,FALSE,=1,Bus
-11/23/2023,$54.29,Spending (P),,"=IF(C21 = ""Work"", B21/D21/24, """")",TRUE,FALSE,=1,Ears
-11/23/2023,$106.74,Spending (S),,"=IF(C22 = ""Work"", B22/D22/24, """")",TRUE,FALSE,=0,Mint Mobile
-11/24/2023,$52.38,Spending (P),,"=IF(C23 = ""Work"", B23/D23/24, """")",TRUE,FALSE,=1,Gifts
-11/24/2023,$5.77,Spending (P),,"=IF(C24 = ""Work"", B24/D24/24, """")",TRUE,FALSE,=1,Vaseline
-11/24/2023,$15.19,Spending (P),,"=IF(C25 = ""Work"", B25/D25/24, """")",TRUE,FALSE,=1,Lactaid
-11/25/2023,$5.80,Spending (P),,"=IF(C26 = ""Work"", B26/D26/24, """")",TRUE,FALSE,=1,Bus
-11/30/2023,$227.94,Work,$14.50,"=IF(C27 = ""Work"", B27/D27/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-11/30/2023,$888.88,Spending (P),,"=IF(C28 = ""Work"", B28/D28/24, """")",TRUE,TRUE,=1/3,Birthday Present
-12/2/2023,$10.88,Spending (P),,"=IF(C29 = ""Work"", B29/D29/24, """")",TRUE,FALSE,=1,Lethal Company
-12/3/2023,$41.17,Spending (P),,"=IF(C30 = ""Work"", B30/D30/24, """")",TRUE,FALSE,=1,Hotpot
-12/5/2023,$33.62,Spending (P),,"=IF(C31 = ""Work"", B31/D31/24, """")",TRUE,FALSE,=1,Nat Gift
-12/6/2023,$23.81,Spending (P),,"=IF(C32 = ""Work"", B32/D32/24, """")",TRUE,FALSE,=1,Melanie Gift (Butterfly)
-12/6/2023,$19.44,Spending (P),,"=IF(C33 = ""Work"", B33/D33/24, """")",TRUE,FALSE,=1,Kano Gift (Gudetama)
-12/6/2023,$15.11,Spending (P),,"=IF(C34 = ""Work"", B34/D34/24, """")",TRUE,FALSE,=1,Hair Dye
-12/6/2023,$53.96,Spending (P),,"=IF(C35 = ""Work"", B35/D35/24, """")",TRUE,FALSE,=1,Fidgets
-12/7/2023,$23.50,Spending (P),,"=IF(C36 = ""Work"", B36/D36/24, """")",TRUE,FALSE,=1,Crane Wives Pins
-12/7/2023,$28.80,Spending (P),,"=IF(C37 = ""Work"", B37/D37/24, """")",TRUE,FALSE,=1,Haircut (Future)
-12/7/2023,$9.48,Spending (P),,"=IF(C38 = ""Work"", B38/D38/24, """")",TRUE,FALSE,=1,Advil cold and flu
-12/8/2023,$31.00,Spending (P),,"=IF(C39 = ""Work"", B39/D39/24, """")",TRUE,FALSE,=1,Art (Boulder)
-12/8/2023,$6.62,Spending (P),,"=IF(C40 = ""Work"", B40/D40/24, """")",TRUE,FALSE,=1,Chai
-12/9/2023,$16.70,Spending (P),,"=IF(C41 = ""Work"", B41/D41/24, """")",TRUE,FALSE,=1,Brunch
-12/11/2023,$6.50,Spending (P),,"=IF(C42 = ""Work"", B42/D42/24, """")",TRUE,FALSE,=1,Pizza
-12/13/2023,$93.97,Spending (P),,"=IF(C43 = ""Work"", B43/D43/24, """")",TRUE,FALSE,=1,Bus Trip
-12/14/2023,$305.04,Work,$14.50,"=IF(C44 = ""Work"", B44/D44/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-12/16/2023,$159.79,Spending (P),,"=IF(C45 = ""Work"", B45/D45/24, """")",TRUE,FALSE,=1,Donation (shiloh)
-12/17/2023,$520.00,Other,,"=IF(C46 = ""Work"", B46/D46/24, """")",TRUE,TRUE,=1/3,Deposit
-12/17/2023,$10.79,Spending (P),,"=IF(C47 = ""Work"", B47/D47/24, """")",TRUE,FALSE,=1,Crochet Kit
-12/18/2023,$21.36,Spending (P),,"=IF(C48 = ""Work"", B48/D48/24, """")",TRUE,FALSE,=1,Mochinut
-12/18/2023,$45.26,Spending (P),,"=IF(C49 = ""Work"", B49/D49/24, """")",TRUE,FALSE,=1,Clothes (Goodwill)
-12/18/2023,$12.00,Other,,"=IF(C50 = ""Work"", B50/D50/24, """")",TRUE,TRUE,=1,Payment back for food
-12/18/2023,$28.00,Spending (P),,"=IF(C51 = ""Work"", B51/D51/24, """")",TRUE,FALSE,=1,Food
-12/18/2023,$67.04,Spending (P),,"=IF(C52 = ""Work"", B52/D52/24, """")",TRUE,FALSE,=1,Joann's (Yarn)
-12/18/2023,$10.00,Other,,"=IF(C53 = ""Work"", B53/D53/24, """")",TRUE,TRUE,=1,Yarn payment
-12/18/2023,$23.81,Other,,"=IF(C54 = ""Work"", B54/D54/24, """")",TRUE,TRUE,=1,Etsy refund
-12/23/2023,$15.62,Other,,"=IF(C55 = ""Work"", B55/D55/24, """")",TRUE,FALSE,=1,More Yarn
-12/26/2023,$0.36,Other,,"=IF(C56 = ""Work"", B56/D56/24, """")",TRUE,FALSE,=1,Penny?
-12/26/2023,$25.00,Spending (P),,"=IF(C57 = ""Work"", B57/D57/24, """")",TRUE,FALSE,=1,Leo Commission!!
-12/28/2023,$212.14,Work,$14.50,"=IF(C58 = ""Work"", B58/D58/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee)
-1/5/2024,$6.47,Spending (P),,"=IF(C59 = ""Work"", B59/D59/24, """")",TRUE,FALSE,=1,Stuffing
-1/5/2024,$9.84,Spending (P),,"=IF(C60 = ""Work"", B60/D60/24, """")",TRUE,FALSE,=1,Food
-1/5/2024,$38.10,Spending (S),,"=IF(C61 = ""Work"", B61/D61/24, """")",TRUE,FALSE,=0,Student Loan Interest Payment
-1/5/2024,$9.71,Spending (P),,"=IF(C62 = ""Work"", B62/D62/24, """")",TRUE,FALSE,=1,Gas Station Food
-1/6/2024,$32.66,Spending (P),,"=IF(C63 = ""Work"", B63/D63/24, """")",TRUE,FALSE,=1,Ichiran
-1/6/2024,$30.00,Spending (P),,"=IF(C64 = ""Work"", B64/D64/24, """")",TRUE,FALSE,=1,Travel
-1/6/2024,$38.54,Spending (P),,"=IF(C65 = ""Work"", B65/D65/24, """")",TRUE,FALSE,=1,Piercing
-1/6/2024,"$1,000.00",Other,,"=IF(C66 = ""Work"", B66/D66/24, """")",TRUE,TRUE,=1/3,Donation
-1/6/2024,$37.38,Spending (P),,"=IF(C67 = ""Work"", B67/D67/24, """")",TRUE,FALSE,=1,Friedmans
-1/6/2024,$11.18,Spending (P),,"=IF(C68 = ""Work"", B68/D68/24, """")",TRUE,FALSE,=1,Laughing Man Cafe
-1/7/2024,$10.00,Spending (P),,"=IF(C69 = ""Work"", B69/D69/24, """")",TRUE,FALSE,=1,Donation
-1/7/2024,$10.88,Spending (P),,"=IF(C70 = ""Work"", B70/D70/24, """")",TRUE,FALSE,=1,Miniso plush
-1/7/2024,$32.99,Spending (P),,"=IF(C71 = ""Work"", B71/D71/24, """")",TRUE,FALSE,=1,Parm
-1/7/2024,$12.93,Spending (P),,"=IF(C72 = ""Work"", B72/D72/24, """")",TRUE,FALSE,=1,Creperie
-1/8/2024,$7.20,Spending (P),,"=IF(C73 = ""Work"", B73/D73/24, """")",TRUE,FALSE,=1,Bagels
-1/11/2024,$360.36,Work,$15.00,"=IF(C74 = ""Work"", B74/D74/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee?)
-1/11/2024,$25.00,Spending (P),,"=IF(C75 = ""Work"", B75/D75/24, """")",TRUE,FALSE,=1,Brenda Keys
-1/13/2024,$6.39,Spending (P),,"=IF(C76 = ""Work"", B76/D76/24, """")",TRUE,FALSE,=1,Shipping Cost
-1/25/2024,$371.33,Work,,,FALSE,TRUE,=1/3,ITS Work (Trainee)
-1/17/2024,$35.00,Spending (S),,,TRUE,FALSE,=0,Expert TA (Physics)
-1/17/2023,$29.07,Spending (P),,,TRUE,FALSE,=1,Joanns Yarn
-1/18/2024,$103.00,Spending (S),,,TRUE,FALSE,=0,Cengage Textbook (Stats)
-1/19/2024,$40.00,Spending (P),,,FALSE,FALSE,=1,Wallet
-1/19/2023,$21.39,Other,,"=IF(C82 = ""Work"", B82/D82/24, """")",TRUE,TRUE,=2/3,Hat
-1/21/2024,$15.82,Spending (P),,,TRUE,FALSE,=1,Chipotle
-1/21/2024,$66.05,Spending (P),,,TRUE,FALSE,=1,Frieren + Bocchi Chains
-1/23/2024,$10.00,Spending (P),,,TRUE,FALSE,=1,testt
+11/7/2023,310,Spending (P),,"=IF(C2 = ""Work"", B2/D2/24, """")",FALSE,FALSE,=1,Tail
+1/1/2024,"=SUM('2023 Archive'!$K:$K) + SUMIF('2023 Archive'!$G:$G, FALSE, '2023 Archive'!$K:$K) * -1",Other,,"=IF(C3 = ""Work"", B3/D3/24, """")",TRUE,TRUE,=0,2023 Savings
+1/1/2024,"=SUM('2023 Archive'!$J:$J) + SUMIF('2023 Archive'!$G:$G, FALSE, '2023 Archive'!$J:$J) * -1",Other,,"=IF(C4 = ""Work"", B4/D4/24, """")",TRUE,TRUE,=1,2023 Excess
+1/1/2024,"=SUMIF('2023 Archive'!$G:$G, FALSE, '2023 Archive'!$K:$K) * -1",Other,,"=IF(C5 = ""Work"", B5/D5/24, """")",TRUE,FALSE,=0,2023 Savings Spent
+1/1/2024,"=SUMIF('2023 Archive'!$G:$G, FALSE, '2023 Archive'!$J:$J) * -1",Other,,"=IF(C6 = ""Work"", B6/D6/24, """")",TRUE,FALSE,=1,2023 Excess Spent
+1/5/2024,6.47,Spending (P),,"=IF(C7 = ""Work"", B7/D7/24, """")",TRUE,FALSE,=1,Stuffing
+1/5/2024,9.84,Food,,"=IF(C8 = ""Work"", B8/D8/24, """")",TRUE,FALSE,=1/3,Food
+1/5/2024,38.1,Spending (S),,"=IF(C9 = ""Work"", B9/D9/24, """")",TRUE,FALSE,=0,Student Loan Interest Payment
+1/5/2024,9.71,Spending (P),,"=IF(C10 = ""Work"", B10/D10/24, """")",TRUE,FALSE,=1/3,Gas Station Food
+1/6/2024,32.66,Food,,"=IF(C11 = ""Work"", B11/D11/24, """")",TRUE,FALSE,=1/3,Ichiran
+1/6/2024,30,Spending (P),,"=IF(C12 = ""Work"", B12/D12/24, """")",TRUE,FALSE,=1,Travel
+1/6/2024,38.54,Spending (P),,"=IF(C13 = ""Work"", B13/D13/24, """")",TRUE,FALSE,=1,Piercing
+1/6/2024,1000,Other,,"=IF(C14 = ""Work"", B14/D14/24, """")",TRUE,TRUE,=1/3,Donation
+1/6/2024,37.38,Food,,"=IF(C15 = ""Work"", B15/D15/24, """")",TRUE,FALSE,=1/2,Friedmans
+1/6/2024,11.18,Food,,"=IF(C16 = ""Work"", B16/D16/24, """")",TRUE,FALSE,=1/2,Laughing Man Cafe
+1/7/2024,10,Spending (P),,"=IF(C17 = ""Work"", B17/D17/24, """")",TRUE,FALSE,=1,Donation
+1/7/2024,10.88,Spending (P),,"=IF(C18 = ""Work"", B18/D18/24, """")",TRUE,FALSE,=1,Miniso plush
+1/7/2024,32.99,Food,,"=IF(C19 = ""Work"", B19/D19/24, """")",TRUE,FALSE,=1/2,Parm
+1/7/2024,12.93,Food,,"=IF(C20 = ""Work"", B20/D20/24, """")",TRUE,FALSE,=1/2,Creperie
+1/8/2024,7.2,Food,,"=IF(C21 = ""Work"", B21/D21/24, """")",TRUE,FALSE,=1/2,Bagels
+1/11/2024,360.36,Work,$15.00,"=IF(C22 = ""Work"", B22/D22/24, """")",TRUE,TRUE,=1/3,ITS Work (Trainee?)
+1/11/2024,25,Spending (P),,"=IF(C23 = ""Work"", B23/D23/24, """")",TRUE,FALSE,=1,Brenda Keys
+1/13/2024,6.39,Spending (P),,"=IF(C24 = ""Work"", B24/D24/24, """")",TRUE,FALSE,=1,Shipping Cost
+1/17/2024,35,Spending (S),,"=IF(C25 = ""Work"", B25/D25/24, """")",TRUE,FALSE,=0,Expert TA (Physics)
+1/18/2024,103,Spending (S),,"=IF(C26 = ""Work"", B26/D26/24, """")",TRUE,FALSE,=0,Cengage Textbook (Stats)
+1/19/2024,40,Spending (P),,"=IF(C27 = ""Work"", B27/D27/24, """")",TRUE,FALSE,=1,Wallet
+1/21/2024,15.82,Food,,"=IF(C28 = ""Work"", B28/D28/24, """")",TRUE,FALSE,=1/2,Chipotle
+1/21/2024,66.05,Spending (P),,"=IF(C29 = ""Work"", B29/D29/24, """")",TRUE,FALSE,=1,Frieren + Bocchi Chains
+1/21/2024,21.28,Food,,"=IF(C30 = ""Work"", B30/D30/24, """")",TRUE,FALSE,=1/2,Panera
+1/22/2024,500,Other,,,TRUE,TRUE,=1/6,Yeah.
+1/23/2024,140,Spending (S),,,TRUE,FALSE,=0,Labs
+1/24/2024,16.51,Other,,,TRUE,FALSE,=1,Donation
+1/25/2024,520.16,Work,$16.50,"=IF(C34 = ""Work"", B34/D34/24, """")",TRUE,TRUE,=1/3,ITS Work (Technician)
+1/25/2024,2,Spending (S),,,TRUE,FALSE,=0,Cane return
+1/26/2024,3.16,Spending (S),,,TRUE,FALSE,=0,ivy.cam NameCheap
+1/28/2024,587.72,Work,$16.50,"=IF(C37 = ""Work"", B37/D37/24, """")",TRUE,TRUE,=1/3,ITS Work (Technician)
+1/28/2024,5,Food,,,TRUE,FALSE,=1/2,Pizza
+1/29/2024,31.85,Spending (P),,,TRUE,FALSE,=1,YubiKey + Hair Dye
+1/30/2024,54,Spending (P),,,TRUE,FALSE,=1,Backup Yubikey
+1/31/2024,16,Spending (P),,,TRUE,FALSE,=1,Clothes
+1/31/2024,26.71,Food,,,TRUE,FALSE,=1/2,TaiChi Ramen
+1/31/2024,7400,Other,,"=IF(C43 = ""Work"", B43/D43/24, """")",TRUE,TRUE,=0,RIT Tuition Refund
+1/31/2024,15.11,Spending (P),,,TRUE,FALSE,=1,Hair Bleach
+2/2/2024,16.51,Food,,"=IF(C45 = ""Work"", B45/D45/24, """")",TRUE,FALSE,=1/2,Wings Over
+2/2/2024,23.75,Spending (P),,"=IF(C46 = ""Work"", B46/D46/24, """")",TRUE,FALSE,=1,Piercings
+2/3/2024,200,Other,,"=IF(C47 = ""Work"", B47/D47/24, """")",TRUE,TRUE,=1/3,Bank of America Bonus
+2/3/2024,59.9,Spending (S),,"=IF(C48 = ""Work"", B48/D48/24, """")",TRUE,FALSE,=0,Curology
+2/3/2024,29.98,Spending (P),,"=IF(C49 = ""Work"", B49/D49/24, """")",TRUE,FALSE,=1,Pants
+2/3/2024,33,Spending (P),,"=IF(C50 = ""Work"", B50/D50/24, """")",TRUE,FALSE,=1,ICCA
+2/3/2024,31.55,Spending (P),,"=IF(C51 = ""Work"", B51/D51/24, """")",TRUE,FALSE,=1/2,Kung Fu Tea
+2/5/2024,6.66,Food,,,TRUE,FALSE,=1/2,Wings Over
+2/6/2024,40,Spending (P),,"=IF(C53 = ""Work"", B53/D53/24, """")",FALSE,FALSE,=1,Blaster
+2/6/2024,50.73,Spending (P),,"=IF(C54 = ""Work"", B54/D54/24, """")",TRUE,FALSE,=1,Sally Beauty Trip
+2/6/2024,20.87,Spending (P),,"=IF(C55 = ""Work"", B55/D55/24, """")",TRUE,FALSE,=1,Uber
+2/6/2024,40,Other,,"=IF(C56 = ""Work"", B56/D56/24, """")",TRUE,TRUE,=1,Deposit
+2/6/2024,35.62,Other,,"=IF(C57 = ""Work"", B57/D57/24, """")",TRUE,TRUE,=1,Manon Payment for Sally
+2/6/2024,25,Spending (P),,,TRUE,FALSE,=1,orgasm??
+2/7/2024,147,Spending (P),,"=IF(C59 = ""Work"", B59/D59/24, """")",TRUE,FALSE,=1,Withdrawal
+2/8/2024,6,Spending (P),,"=IF(C60 = ""Work"", B60/D60/24, """")",TRUE,FALSE,=1,Bake Sale
+2/8/2024,46.69,Spending (P),,,TRUE,FALSE,=1/2,Applebees
+2/8/2024,19.99,Spending (S),,,TRUE,FALSE,=0,Cane
+2/9/2024,56.16,Spending (S),,,TRUE,FALSE,=0,Moisturizer
+2/9/2024,20.51,Spending (P),,"=IF(C64 = ""Work"", B64/D64/24, """")",TRUE,FALSE,=1,Binder
+2/9/2024,32.38,Spending (S),,,TRUE,FALSE,=0,Razors
+2/9/2024,13.05,Spending (S),,,TRUE,FALSE,=0,Spirolactone
+2/10/2024,11.12,Food,,"=IF(C67 = ""Work"", B67/D67/24, """")",TRUE,FALSE,=1/2,Chicken at Dim Sum
+2/11/2024,11.93,Food,,"=IF(C68 = ""Work"", B68/D68/24, """")",TRUE,FALSE,=1/2,Chipotle
+2/11/2024,305.18,Work,$16.50,"=IF(C69 = ""Work"", B69/D69/24, """")",TRUE,TRUE,=1/3,ITS Work (Technician)
+2/12/2024,48.72,Spending (S),,,TRUE,FALSE,=0,Estrogen + Needles
+2/12/2024,6.47,Spending (S),,,TRUE,FALSE,=0,Sharps Container
+2/13/2024,2,Food,,"=IF(C72 = ""Work"", B72/D72/24, """")",TRUE,FALSE,=1/2,Cupcake
+2/14/2024,15,Food,,"=IF(C73 = ""Work"", B73/D73/24, """")",TRUE,FALSE,=1/2,Ramen
+2/15/2024,30,Other,,"=IF(C74 = ""Work"", B74/D74/24, """")",TRUE,FALSE,=1/2,Donation for Food
+2/16/2024,71.84,Food,,"=IF(C75 = ""Work"", B75/D75/24, """")",TRUE,FALSE,=1/2,Asian Market
+2/16/2024,1733,Other,,"=IF(C76 = ""Work"", B76/D76/24, """")",TRUE,TRUE,=0,RIT Return
+2/19/2024,10,Spending (P),,"=IF(C77 = ""Work"", B77/D77/24, """")",TRUE,FALSE,=1,Gas Joke
+2/17/2024,=23.22*2 +0.7,Other,,"=IF(C78 = ""Work"", B78/D78/24, """")",TRUE,FALSE,=1,Kikuri Keychain
+2/17/2024,11.18,Food,,"=IF(C79 = ""Work"", B79/D79/24, """")",TRUE,FALSE,=1/2,Chipotle
+2/20/2024,2.14,Other,,"=IF(C80 = ""Work"", B80/D80/24, """")",TRUE,FALSE,=1/3,Tax Undo
+2/20/2024,=475-457,Other,,"=IF(C81 = ""Work"", B81/D81/24, """")",TRUE,TRUE,=0,NY Tax return
+2/22/2024,5,Food,,"=IF(C82 = ""Work"", B82/D82/24, """")",FALSE,FALSE,=1/2,Bake Sale
+2/22/2024,95.97,Spending (S),,"=IF(C83 = ""Work"", B83/D83/24, """")",FALSE,FALSE,=0,Greyhound
+2/22/2024,100,Other,,"=IF(C84 = ""Work"", B84/D84/24, """")",FALSE,TRUE,=0,Statement Credit from Discover
+2/22/2024,5,Food,,"=IF(C85 = ""Work"", B85/D85/24, """")",TRUE,FALSE,=1/2,Bake Sale
+2/21/2024,=25.99 + 25.99 + 14.99,Spending (P),,"=IF(C86 = ""Work"", B86/D86/24, """")",TRUE,FALSE,=0,Sports Bras
+2/20/2024,42.88,Food,,"=IF(C87 = ""Work"", B87/D87/24, """")",TRUE,FALSE,=1/2,Target + Tim Hortons
+2/22/2024,3.75,Spending (S),,"=IF(C88 = ""Work"", B88/D88/24, """")",TRUE,FALSE,=0,Conditioner
+2/23/2024,230.45,Work,$16.50,"=IF(C89 = ""Work"", B89/D89/24, """")",FALSE,TRUE,=1/3,ITS Work (Tech)
+2/25/2024,49,Spending (S),,,TRUE,FALSE,=0,ITS Work (Technician)
+2/27/2024,17.5,Spending (S),,"=IF(C91 = ""Work"", B91/D91/24, """")",TRUE,FALSE,=0,Driving Course
+2/28/2024,90,Spending (S),,,TRUE,FALSE,=1/3,Converse
+2/28/2024,16.15,Spending (P),,,TRUE,FALSE,=1,Rat
+3/3/2024,22.82,Food,,,TRUE,FALSE,=1/2,Chicken
+3/4/2024,48,Spending (S),,,TRUE,FALSE,=0,Target Bras
